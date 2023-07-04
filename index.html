@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Date Picker Vanilla Js</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+		/>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+	</head>
+	<body>
+		<!-- filter options -->
+		<form action="">
+			<div class="pb_dashboard_filter">
+				<div class="pb_dashboard_filter__select_options">
+					<div class="dorp-down-wrap finance-drop date-picker-dropdown">
+						<button type="button" class="btnx input_fild" id="btn">
+							<span><i class="fa-regular fa-calendar"></i></span>
+							<span id="show-selected-date-E1">2022-07-02 - 2022-07-02</span>
+						</button>
+
+						<div class="dropdown" id="dropdown">
+							<span class="day-items" onclick="getBindDate('E1','today')"
+								>Today</span
+							>
+							<span class="day-items" onclick="getBindDate('E1','yesterday')"
+								>Yesterday</span
+							>
+							<span class="day-items" onclick="getBindDate('E1','last7Days')"
+								>Last 7 Days</span
+							>
+							<span class="day-items" onclick="getBindDate('E1','last14Days')"
+								>Last 14 Days</span
+							>
+							<span class="day-items" onclick="getBindDate('E1','last30Days')"
+								>Last 30 Days</span
+							>
+							<span class="day-items" onclick="getBindDate('E1','thisMonth')"
+								>This Month</span
+							>
+							<span class="day-items" onclick="getBindDate('E1','lastMonth')"
+								>Last Month</span
+							>
+							<p class="custom-head">Custom</p>
+
+							<div id="custom-box" class="custom-box">
+								<div class="input-items-box">
+									<div>
+										<label class="label-date-select">From</label>
+
+										<input
+											style="z-index: 999999"
+											type="text"
+											id="datePickerInput1-E1"
+											readonly
+										/>
+									</div>
+									<div>
+										<label class="label-date-select">To</label>
+										<input
+											style="z-index: 999999"
+											type="text"
+											id="datePickerInput2-E1"
+											readonly
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div class="apply-btn-box">
+								<button
+									type="button"
+									onclick="getBindDate('E1','apply')"
+									class="royel-btn green"
+								>
+									<span><i class="fa-solid fa-check"></i></span>
+									<span>Apply</span>
+								</button>
+								<button
+									type="button"
+									onclick="getBindDate('E1','cancel')"
+									class="royel-btn dark"
+								>
+									<span><i class="fa-solid fa-xmark"></i></span>
+									<span>Cancel</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pb_dashboard__filter_actions">
+					<button type="submit" class="btn-apply">
+						<i class="fa-sharp fa-solid fa-check"></i> Apply
+					</button>
+				</div>
+			</div>
+		</form>
+		<!-- filter options -->
+		<form action="">
+			<div class="pb_dashboard_filter">
+				<div class="pb_dashboard_filter__select_options">
+					<div class="dorp-down-wrap finance-drop date-picker-dropdown">
+						<button type="button" class="btnx input_fild" id="btn2">
+							<span><i class="fa-regular fa-calendar"></i></span>
+							<span id="show-selected-date-E2">2022-07-02 - 2022-07-02</span>
+						</button>
+
+						<div class="dropdown" id="dropdown2">
+							<span class="day-items" onclick="getBindDate('E2','today')"
+								>Today</span
+							>
+							<span class="day-items" onclick="getBindDate('E2','yesterday')"
+								>Yesterday</span
+							>
+							<span class="day-items" onclick="getBindDate('E2','last7Days')"
+								>Last 7 Days</span
+							>
+							<span class="day-items" onclick="getBindDate('E2','last14Days')"
+								>Last 14 Days</span
+							>
+							<span class="day-items" onclick="getBindDate('E2','last30Days')"
+								>Last 30 Days</span
+							>
+							<span class="day-items" onclick="getBindDate('E2','thisMonth')"
+								>This Month</span
+							>
+							<span class="day-items" onclick="getBindDate('E2','lastMonth')"
+								>Last Month</span
+							>
+							<p class="custom-head">Custom</p>
+
+							<div id="custom-box" class="custom-box">
+								<div class="input-items-box">
+									<div>
+										<label class="label-date-select">From</label>
+
+										<input
+											style="z-index: 999999"
+											type="text"
+											id="datePickerInput1-E2"
+											readonly
+										/>
+									</div>
+									<div>
+										<label class="label-date-select">To</label>
+										<input
+											style="z-index: 999999"
+											type="text"
+											id="datePickerInput2-E2"
+											readonly
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div class="apply-btn-box">
+								<button
+									type="button"
+									onclick="getBindDate('E2','apply')"
+									class="royel-btn green"
+								>
+									<span><i class="fa-solid fa-check"></i></span>
+									<span>Apply</span>
+								</button>
+								<button
+									type="button"
+									onclick="getBindDate('E2','cancel')"
+									class="royel-btn dark"
+								>
+									<span><i class="fa-solid fa-xmark"></i></span>
+									<span>Cancel</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pb_dashboard__filter_actions">
+					<button type="submit" class="btn-apply">
+						<i class="fa-sharp fa-solid fa-check"></i> Apply
+					</button>
+				</div>
+			</div>
+		</form>
+		<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		<script>
+			flatpickr('#datePickerInput1-E1', {
+				dateFormat: 'Y-m-d',
+				defaultDate: '2023-07-02',
+				static: true,
+			});
+			flatpickr('#datePickerInput2-E1', {
+				dateFormat: 'Y-m-d',
+				defaultDate: '2023-07-02',
+				static: true,
+			});
+
+			flatpickr('#datePickerInput1-E2', {
+				dateFormat: 'Y-m-d',
+				defaultDate: '2023-07-02',
+				static: true,
+			});
+			flatpickr('#datePickerInput2-E2', {
+				dateFormat: 'Y-m-d',
+				defaultDate: '2023-07-02',
+				static: true,
+			});
+		</script>
+		<script src="./assets/js/dateSelecte.js"></script>
+		<script src="./assets/js/dropdown.js"></script>
+	</body>
+</html>
