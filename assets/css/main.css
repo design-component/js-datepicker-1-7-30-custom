@@ -1,3 +1,8 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
 .pb_dashboard_filter {
   margin-bottom: 40px;
   margin-top: 20px;
@@ -67,6 +72,7 @@
   position: relative;
   border: 1px solid #c7c7cc;
   width: 100%;
+  font-family: "Poppins", sans-serif;
 }
 .finance-drop .btnx:focus {
   border: 1px solid #34c73b !important;
@@ -201,6 +207,24 @@
   border-radius: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.royel-btn {
+  width: 50%;
+  margin-top: 10px;
+  border: none;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.royel-btn:hover {
+  background-color: #cccfd1;
 }
 
 @media only screen and (max-width: 600px) {
